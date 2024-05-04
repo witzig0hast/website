@@ -1,0 +1,45 @@
+ul.pages {
+        background-color: #928787;   
+        padding: 10px;
+        text-align: center; /* Zentriert den Text */
+        list-style-type: none; /* Entfernt Aufzählungszeichen */
+        display: flex;
+        justify-content: center; /* Zentriert horizontal */
+        align-items: center; /* Zentriert vertikal */
+        height: 35px; /* Setzt die Höhe auf die volle Bildschirmhöhe */
+        border: 6px solid #ccc;
+        border-radius: 33px;
+}
+
+#aboutuspage, #teampage, #homepage {
+    /* Hier sollten keine Positionseigenschaften benötigt werden */
+user-select: none;
+text-decoration: none;
+color: black;
+border: 2px solid #ccc;
+border-radius: 25px; 
+margin: 10px 145px; /* Fügen Sie etwas Abstand zwischen den Links hinzu */
+}
+
+
+ul.sidebar { 
+    position: absolute; 
+    background-color: #928787; 
+    padding: 1px 1px; 
+    justify-content: left; 
+    width: 300px; /* Beispielbreite */
+    height: 80%; /* Höhe der Seitenleiste */
+    left: 1%; /* Links ausgerichtet */
+    border: 6px solid #ccc;
+    border-radius: 33px;
+    /* Weitere Positionierungseigenschaften hier hinzufügen, falls erforderlich */
+}
+
+#sidebartext1 {
+    width: 90%;
+    margin-left: 5%;
+}
+
+#sidebartext2 {
+    margin-left: 3%;
+}
