@@ -1,0 +1,14 @@
+{
+    "home": {
+        "url": "http://hastservices.giize.com:5500/index.html",
+        "name": "Home"
+    },
+    "page1": {
+        "url": "http://hastservices.giize.com:5500/sites/aboutus.html",
+        "name": "About Us"
+    },
+    "page2": {
+        "url": "http://hastservices.giize.com:5500/sites/team.html",
+        "name": "Team"
+    }
+}

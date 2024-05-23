@@ -10,16 +10,43 @@
 <body>
     <nav>
         <ul class="pages">
-            <button onclick="gotoaboutpage()" id="aboutuspage">About</button>
-            <button onclick="gotomainpage()" id="homepage">Home</button>
-            <button onclick="gototeampage()" id="teampage">Team</button>
+            <div id="buttonContainer"></div>
+            <button onclick="darkmode()" id="darkmode">Darkmode</button>
         </ul>
     </nav>
     <aside>
         <ul class="sidebar">
             <p id="sidebartext1"> A pioneering venture in the heart of innovation, this company epitomizes dedication to excellence. With a forward-thinking approach and a commitment to cutting-edge technology, it continues to redefine industry standards. Embracing diversity and fostering creativity, it cultivates an environment where ideas flourish and dreams take flight. Through unwavering perseverance and a passion for progress, it paves the way for a brighter future, inspiring others to reach new heights. As a beacon of integrity and ingenuity, it remains steadfast in its pursuit of success, leaving an indelible mark on the world stage.</p>
-            <h1 id="sidebartext2">Text created with ChatGPT</h1>
+            <h1 id="sidebartext2">Text created with</h1><a id="sidebartext3" href="https://chat.openai.com">ChatGPT</a>
+            <video controls="controls" width="250px" id="videoolafsidebar" >
+                <source src="video.mp4" type="video/mp4" title="This is a video of the german president Olaf Scholz">
+            </video>
+
         </ul>
     </aside>
+    <footer>
+        <ul class="footer">
+            <p id="footertext1">in 2024</p>
+            <i id="footertext2">developed by </i><a id="footertext3" style="color: black;" href="https://github.com/witzig0hast">witzig0hast</a>
+        </ul>
+    </footer>
+    <script>
+    function darkmode() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
+    <style>
+    body {
+      padding: 25px;
+      background-color: white;
+      color: black;
+    }
+    
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+    </style>
+
 </body>
-</html>
