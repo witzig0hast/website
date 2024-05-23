@@ -1,44 +1,52 @@
-function gotomainpage() {
-    var currentPage = window.location.pathname.split("/").pop();
-    
-    if (currentPage === "index.html") {
-        alert("You are currently on the main page.");
-    }
-    else { 
-        console.log("Open Site:" +currentPage)
-        window.location.href = "..//index.html";
-    }
-}
+var pageConfig = {};
 
-function gotoaboutpage() {
-    var currentPage = window.location.pathname.split("/").pop();
-    
-    if (currentPage === "aboutus.html") {
-        alert("You are currently on the about us page.");
-    }
-    else {
-        if (currentPage === "index.html") { 
-        window.location.href = "sites/aboutus.html";
-    }
-        else {
-        window.location.href = "..//sites/aboutus.html";  
-        }
-    }   
-}
+// Fetch the configuration JSON file
+fetch('config.json')
+    .then(response => response.json())
+    .then(data => {
+        pageConfig = data;
+    })
+    .catch(error => console.error('Error loading config:', error));
 
-function gototeampage() {
- 
-        var currentPage = window.location.pathname.split("/").pop();
-    
-    if (currentPage === "team.html") {
-        alert("You are currently on the team page.");
-    }
-    else {
-        if (currentPage === "index.html") { 
-        window.location.href = "sites/team.html";
+
+    var pageConfig = {};
+
+    // Fetch the configuration JSON file
+    fetch('config.json')
+        .then(response => response.json())
+        .then(data => {
+            pageConfig = data;
+            createButtons();
+        })
+        .catch(error => console.error('Error loading config:', error));
+
+    function switchPage(pageName) {
+        var targetPage = pageConfig[pageName]?.url;
+        if (!targetPage) {
+            alert("The page does not exist in the configuration.");
+            return;
         }
-        else {
-        window.location.href = "..//sites/team.html";  
+
+        var currentPage = window.location.href;
+        if (currentPage === targetPage) {
+            alert("You're currently on this page!");
+        } else {
+            window.location.href = targetPage; // Navigate to the target page
         }
     }
-}
+
+    function createButtons() {
+        var container = document.getElementById('buttonContainer');
+        for (var pageName in pageConfig) {
+            if (pageConfig.hasOwnProperty(pageName)) {
+                var button = document.createElement('button');
+                button.textContent = pageConfig[pageName].name;
+                button.onclick = (function(page) {
+                    return function() {
+                        switchPage(page);
+                    };
+                })(pageName);
+                container.appendChild(button);
+            }
+        }
+    }

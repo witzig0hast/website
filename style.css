@@ -1,45 +1,101 @@
+/* Allgemeine Stile */
+body {
+    color: rgb(115, 53, 231);
+    background-color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Navigation */
 ul.pages {
-        background-color: #928787;   
-        padding: 10px;
-        text-align: center; /* Zentriert den Text */
-        list-style-type: none; /* Entfernt Aufzählungszeichen */
-        display: flex;
-        justify-content: center; /* Zentriert horizontal */
-        align-items: center; /* Zentriert vertikal */
-        height: 35px; /* Setzt die Höhe auf die volle Bildschirmhöhe */
-        border: 6px solid #ccc;
-        border-radius: 33px;
-}
-
-#aboutuspage, #teampage, #homepage {
-    /* Hier sollten keine Positionseigenschaften benötigt werden */
-user-select: none;
-text-decoration: none;
-color: black;
-border: 2px solid #ccc;
-border-radius: 25px; 
-margin: 10px 145px; /* Fügen Sie etwas Abstand zwischen den Links hinzu */
-}
-
-
-ul.sidebar { 
-    position: absolute; 
-    background-color: #928787; 
-    padding: 1px 1px; 
-    justify-content: left; 
-    width: 300px; /* Beispielbreite */
-    height: 80%; /* Höhe der Seitenleiste */
-    left: 1%; /* Links ausgerichtet */
+    background-color: #928787;
+    padding: 10px;
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
     border: 6px solid #ccc;
     border-radius: 33px;
-    /* Weitere Positionierungseigenschaften hier hinzufügen, falls erforderlich */
+    box-shadow: 2px 2px 4px #742020;
 }
 
-#sidebartext1 {
+ul.pages button {
+    user-select: none;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    margin: 10px 20px; /* Weniger Margin für bessere Kontrolle */
+    cursor: pointer;
+}
+
+/* Sidebar */
+ul.sidebar {
+    background-color: #928787;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    height: auto; /* Höhe automatisch */
+    border: 6px solid #ccc;
+    border-radius: 33px;
+    box-shadow: 2px 2px 4px #742020;
+    margin: 20px 0; /* Abstand zum Rand */
+}
+
+#sidebartext1, #sidebartext2, #sidebartext3 {
     width: 90%;
-    margin-left: 5%;
+    margin: 10px auto; /* Zentriert den Text und gibt etwas Abstand */
 }
 
-#sidebartext2 {
-    margin-left: 3%;
+#sidebartext3 {
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #928787;
+    border: 6px solid #ccc;
+    border-radius: 33px;
+    width: 64%;
+    box-shadow: 2px 2px 4px #742020;
+    height: 100px;
+    user-select: none;
+    text-align: center;
+    margin: 20px auto; /* Zentriert den Footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footertext1, #footertext2, #footertext3 {
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+/* Video */
+#videoolafsidebar {
+    margin: 20px auto; /* Zentriert das Video und gibt Abstand */
+    display: block; /* Sicherstellen, dass es als Block-Element dargestellt wird */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .footer, ul.pages, ul.sidebar {
+        width: 100%; /* Volle Breite für kleinere Bildschirme */
+        margin: 0;
+        padding: 10px;
+    }
+
+    #aboutuspage, #teampage, #homepage, #darkmode {
+        margin: 5px; /* Weniger Margin für kleinere Bildschirme */
+    }
 }
